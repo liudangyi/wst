@@ -1,1 +1,0 @@
-rsync -Fr --delete . wst:www
