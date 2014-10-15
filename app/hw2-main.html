@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- endbuild -->
+    <style type="text/css">
+    body {
+      padding-bottom: 300px;
+    }
+    .block {
+      padding: 20px 0 30px;
+    }
+    .block:nth-child(2n) {
+      background-color: #F8F8F8;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="block">
+      <div class="container">
+        <h2 id="a1">Paragraphs</h2>
+        <p>This is a paragraph.</p>
+        <p>This is also a paragraph.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <h2 id="a2">Line breaks</h2>
+        <p>There is a line break <br /> in this paragraph.</p>
+        <p>However, this is another paragraph.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <h2 id="a3">Headings</h2>
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <h2 id="a4">Images</h2>
+        <img src="images/funny-wallpaper-playboy.jpg" alt="Funny Wallpaper" />
+        <p>(This is one of my favorite walllpapers. Do you like it?)</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <h2 id="a5">Hypertext links</h2>
+        <p>Do you know this site is open-source? You can get the code from <a href="https://github.com/liudangyi/wst" target="_blank">https://github.com/liudangyi/wst</a>.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <h2 id="a6">Hypertext links that target within the same page</h2>
+        <p><a href="#top">Click here</a> to go back to top.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <h2 id="a7">An ordered list</h2>
+        <p>We all love github. But GFW doesn't. </p>
+        <p>Below are some of the famous code hosting websites in China. May be helpful to you.</p>
+        <ol>
+          <li><a href="https://coding.net" target="_blank">https://coding.net</a></li>
+          <li><a href="http://git.oschina.net" target="_blank">http://git.oschina.net</a></li>
+          <li><a href="https://gitcafe.com" target="_blank">https://gitcafe.com</a></li>
+          <li><a href="http://code.csdn.net" target="_blank">http://code.csdn.net</a></li>
+        </ol>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <h2 id="a8">A table with rowspan and colspan attributes specified</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Host</th>
+              <th>Language</th>
+              <th>Free?</th>
+              <th>Max repos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a href="https://coding.net" target="_blank">https://coding.net</a></td>
+              <td>Java</td>
+              <td>Yes</td>
+              <td>1000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><a href="http://git.oschina.net" target="_blank">http://git.oschina.net</a></td>
+              <td rowspan="3">Ruby</td>
+              <td>Yes</td>
+              <td>1000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><a href="https://gitcafe.com" target="_blank">https://gitcafe.com</a></td>
+              <td>No</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><a href="http://code.csdn.net" target="_blank">http://code.csdn.net</a></td>
+              <td colspan="2">Unknown</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

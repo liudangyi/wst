@@ -10,6 +10,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+img {
+  max-width: 100%;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+}
 a {
   color: #428bca;
   text-decoration: none
@@ -20,6 +24,23 @@ a:hover, a:focus {
 }
 li {
   margin-bottom: 6px;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 30px;
+}
+td, th {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #CCC;
+  margin: 0;
+}
+tr:hover > td {
+  background-color: #FFF;
+}
+th {
+  border-bottom-width: 2px;
 }
 #header {
   padding: 40px 0;
