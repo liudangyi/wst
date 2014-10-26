@@ -167,7 +167,6 @@ module.exports = (grunt) ->
         files: [
           {
             expand: true
-            dot: true
             cwd: "<%= config.app %>"
             dest: "<%= config.dist %>"
             src: [
@@ -175,6 +174,7 @@ module.exports = (grunt) ->
               "images/{,*/}*.*"
               "{,*/}*.html"
               "styles/fonts/{,*/}*.*"
+              "cgi-bin/**"
             ]
           }
           {
@@ -217,6 +217,9 @@ module.exports = (grunt) ->
     grunt.log.warn "The `server` task has been deprecated. Use `grunt serve` to start a server."
     grunt.task.run [(if target then ("serve:" + target) else "serve")]
 
+  grunt.registerTask "chmod", (target) ->
+    require("child_process").exec "chmod -R +x dist/cgi-bin"
+
   grunt.registerTask "build", [
     "clean:dist"
     "wiredep"
@@ -229,10 +232,11 @@ module.exports = (grunt) ->
     "copy:dist"
     "rev"
     "usemin"
+    "chmod"
   ]
 
   grunt.registerTask "sync", ->
-    require("child_process").exec "rsync -Fr --delete dist/ wst:www"
+    require("child_process").exec "distrsync -Fr --delete dist/ wst:www"
 
   grunt.registerTask "default", [
     "build"

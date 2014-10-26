@@ -42,35 +42,7 @@ tr:hover > td {
 th {
   border-bottom-width: 2px;
 }
-#header {
-  padding: 40px 0;
-  background-color: #F5F5F5;
-  border-top: 8px solid #08C;
-}
-#avatar {
-  float: right;
-  border-radius: 50%;
-  margin-top: -40px;
-  box-shadow: 1px 1px 4px rgba(0,0,0,.6);
-}
-#avatar:hover {
-  box-shadow: 1px 1px 8px rgba(0,0,0,.6);
-}
-#avatar:active {
-  box-shadow: 1px 1px 4px rgba(0,0,0,.6);
-}
 .container {
   width: 800px;
   margin: 0 auto;
-}
-#about {
-  margin-top: 50px;
-  padding: 30px 60px;
-  background-color: #EEE;
-  border-radius: 6px;
-}
-#validated {
-  position: absolute;
-  left: 5px;
-  bottom: 5px;
 }

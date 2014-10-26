@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Homework 3</title>
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <!-- endbuild -->
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+    label {
+      display: block;
+    }
+    label > span {
+      display: inline-block;
+      text-align: right;
+      width: 80px;
+      margin-right: 10px;
+    }
+    #header {
+      background-color: #71abd0;
+      padding: 10px 0;
+      border-radius: 6px;
+    }
+    #body {
+      display: table;
+      width: 100%;
+    }
+    #left, #right {
+      display: table-cell;
+      vertical-align: top;
+      padding-bottom: 20px;
+      width: 150px;
+      background-color: #c8e2fb;
+      border-radius: 6px;
+    }
+    #main {
+      display: table-cell;
+      vertical-align: top;
+      background-color: #e9dfd5;
+      border-radius: 6px;
+    }
+    #footer {
+      background-color: #82ab0d;
+      padding: 5px 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="width: 900px;">
+    <div id="header">
+      <h1>Homework 3</h1>
+    </div>
+    <div id="body">
+      <div id="left">
+        <h1>Left <br> Column</h1>
+        <p>Placeholder</p>
+        <p>Placeholder</p>
+        <p>Placeholder</p>
+        <p>Placeholder</p>
+        <p>Placeholder</p>
+        <p>Placeholder</p>
+        <button onclick="$(this).before('<p>...</p>')">Add more</button>
+      </div>
+      <div id="main">
+        <h1>Questionare</h1>
+        <form action="/cgi-bin/questionare/insert.pl" id="form" style="text-align: left; line-height: 30px; margin-left: 180px;">
+          <label><span>Name: </span><input type="text" name="name"></label>
+          <label><span>Age: </span><input type="text" name="age"></label>
+          <label><span>Gender: </span>
+            <select name="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </label>
+          <label><span>Email: </span><input type="email" name="email"></label>
+          <div style="margin-left: 50px;">
+            <input type="submit"  value="Submit">
+            <input type="reset"  value="Reset">
+            <button id="query">Query</button>
+          </div>
+        </form>
+        <form action="/cgi-bin/questionare/delete.pl" id="form2" style="margin: 0 30px; display: none;">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>
+                  <input type="submit"  value="Delete">
+                </th>
+              </tr>
+            </thead>
+            <tbody id="result">
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div id="right">
+        <h1>Right <br> Column</h1>
+        <button onclick="$(this).before('<p>...</p>')">Add more</button>
+      </div>
+    </div>
+    <div id="footer">
+      <h3>Footer</h3>
+    </div>
+  </div>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <script type="text/javascript">
+    function query() {
+      $.get("/cgi-bin/questionare/query.pl", function(data) {
+        $("#result").html("");
+        data = data.split("\n");
+        for (var i = data.length - 1; i >= 0; i--) {
+          if (data[i].length > 4)
+            $("#result").prepend("<tr><td>" + data[i].replace(/\t/g, "</td><td>") +
+              "</td><td><input type='checkbox' name='" + i + "'></td></tr>");
+        };
+        $("#form2").show();
+      })
+    }
+    $("#form").submit(function(e) {
+      e.preventDefault();
+      var $this = $(this);
+      $.get($this.attr("action"), $this.serialize(), function(){
+        $this[0].reset();
+        alert("Success!");
+        query();
+      }).fail(function(err) {
+        alert("Error: " + err.responseText);
+      })
+    });
+    $("#form2").submit(function(e) {
+      e.preventDefault();
+      var $this = $(this);
+      $.get($this.attr("action"), $this.serialize(), function(){
+        query();
+      }).fail(function(err) {
+        alert("Error: " + err.responseText);
+      })
+    });
+    $("#query").click(function(e) {
+      e.preventDefault();
+      query();
+    });
+  </script>
+</body>
+</html>
