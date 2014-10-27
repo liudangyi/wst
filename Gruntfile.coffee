@@ -236,7 +236,7 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask "sync", ->
-    require("child_process").exec "distrsync -Fr --delete dist/ wst:www"
+    require("child_process").exec "rsync -pFr --delete dist/ wst:www"
 
   grunt.registerTask "default", [
     "build"
