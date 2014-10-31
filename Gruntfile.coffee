@@ -48,6 +48,7 @@ module.exports = (grunt) ->
 
         files: [
           "<%= config.app %>/{,*/}*.html"
+          "<%= config.app %>/{,*/}*.php"
           ".tmp/styles/{,*/}*.css"
           "<%= config.app %>/images/{,*/}*"
         ]
@@ -67,18 +68,6 @@ module.exports = (grunt) ->
           middleware: (connect) ->
             [
               connect.static(".tmp")
-              connect().use("/bower_components", connect.static("./bower_components"))
-              connect.static(config.app)
-            ]
-
-      test:
-        options:
-          open: false
-          port: 9001
-          middleware: (connect) ->
-            [
-              connect.static(".tmp")
-              connect.static("test")
               connect().use("/bower_components", connect.static("./bower_components"))
               connect.static(config.app)
             ]
@@ -126,7 +115,7 @@ module.exports = (grunt) ->
     wiredep:
       app:
         ignorePath: /^\/|\.\.\//
-        src: ["<%= config.app %>/index.html"]
+        src: ["<%= config.app %>/index.html", "<%= config.dist %>/{,*/}*.php"]
 
 
     # Renames files for browser caching purposes
@@ -173,6 +162,7 @@ module.exports = (grunt) ->
               "*.{ico,png,txt}"
               "images/{,*/}*.*"
               "{,*/}*.html"
+              "{,*/}*.php"
               "styles/fonts/{,*/}*.*"
               "cgi-bin/**"
             ]
@@ -194,7 +184,6 @@ module.exports = (grunt) ->
     # Run some tasks in parallel to speed up build process
     concurrent:
       server: ["copy:styles"]
-      test: ["copy:styles"]
       dist: ["copy:styles"]
 
   grunt.registerTask "serve", "start the server and preview your app, --allow-remote for remote access", (target) ->
