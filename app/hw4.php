@@ -30,7 +30,6 @@ if ($id = intval($_REQUEST["delete"])) {
 ?><!DOCTYPE html>
 <title>Guest Book</title>
 <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" href="styles/446ce9bb.main.css">
 <!-- build:css(.tmp) styles/main.css -->
 <link rel="stylesheet" href="styles/main.css" />
 <!-- endbuild -->

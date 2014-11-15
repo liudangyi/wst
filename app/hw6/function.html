@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<title>HW6: function.html</title>
+<!-- build:css(.tmp) /styles/main.css -->
+<link rel="stylesheet" href="/styles/main.css" />
+<!-- endbuild -->
+<style>
+  .container {
+    margin-top: 50px;
+    line-height: 1.6;
+  }
+  pre {
+    margin-top: 30px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+  }
+</style>
+<script language="javascript">
+<!--
+// Using Functions
+
+
+function myAlert() {
+  window.alert("Hello");     
+}
+
+function myAlert2(aString) { 
+  //this function takes parameter
+  // it also returns a value
+  window.alert("Alerting: " + aString);
+  return 34;
+}
+
+-->
+</script>
+<div class="container">
+  <script id="script">
+    document.write("The return value of first time was: " + myAlert2());
+    document.write("<br>");
+    document.write("The return value of second time was: " + myAlert2("123123"));
+    document.write("<br>");
+
+    function compare(s1, s2) {
+      return s1 != s2;
+    }
+    document.write("The result of 'this' != 'that' was: " + compare('this', 'that'));
+  </script>
+  <pre><script>
+    document.write(document.getElementById('script').innerHTML.replace(/&/g, '&amp;').replace(/</g, '&lt;'));
+  </script></pre>
+</div>

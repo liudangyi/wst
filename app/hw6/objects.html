@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<title>HW6: objects.html</title>
+<!-- build:css(.tmp) /styles/main.css -->
+<link rel="stylesheet" href="/styles/main.css" />
+<!-- endbuild -->
+<style>
+  .container {
+    margin-top: 50px;
+    line-height: 1.6;
+  }
+  pre {
+    margin-top: 30px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+  }
+</style>
+<div class="container">
+  <script id="script">
+    var tourOperator = "Ten Bellies Tours"; // a global variable
+    var holList = [
+      new Holiday("Beijing", "Half of Year", "￥5300"),
+      new Holiday("Japan", "1 Week", "￥8000")
+    ]
+
+    // An object IS a function
+    function Holiday(destination, duration, cost) {
+      this.destination = destination; //"this" used in same sense as Java
+      this.duration    = duration;
+      this.cost        = cost;
+      this.agent       = tourOperator;     
+    }
+
+    function makeHoliday(dest, dur, cost) {
+      holList.push(new Holiday(dest, dur, cost));
+    }
+
+    function printAll() {
+      document.write("<ul>");
+      for (var i=0; i < holList.length; i++) {
+        document.write("<li>");
+        var anObject = holList[i];
+        for (f in anObject) {
+          document.write(f + " = " + anObject[f] + "<br />");
+        }
+        document.write("</li>");
+      }
+      document.write("</ul>");
+    }
+    makeHoliday("Toronto", "2 Weeks", "$400");
+    printAll();
+  </script>
+  <pre><script>
+    document.write(document.getElementById('script').innerHTML.replace(/&/g, '&amp;').replace(/</g, '&lt;'));
+  </script></pre>
+</div>

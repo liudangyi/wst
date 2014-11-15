@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>HW6: popups.html</title>
+<!-- build:css(.tmp) /styles/main.css -->
+<link rel="stylesheet" href="/styles/main.css" />
+<!-- endbuild -->
+<style>
+  .container {
+    margin-top: 50px;
+    line-height: 1.6;
+  }
+  pre {
+    margin-top: 30px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+  }
+</style>
+<div class="container">
+  <div id="script">
+    <a href="#" onclick="location = prompt('Where do you want to go?', 'index.html')">
+      Take me away.
+    </a>
+    <p>
+      You should add 'return true'. like
+      <a href="#" onMouseOver="self.status='Off to the Lemon'; return true;" onMouseOut="self.status='';" >
+        the Lemon
+      </a>.
+      However, modern browsers no longer support `status`.
+    </p>
+  </div>
+  <pre><script>
+    document.write(document.getElementById('script').innerHTML.replace(/&/g, '&amp;').replace(/</g, '&lt;'));
+  </script></pre>
+</div>

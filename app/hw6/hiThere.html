@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title>HW6: hiThere.html</title>
+<!-- build:css(.tmp) /styles/main.css -->
+<link rel="stylesheet" href="/styles/main.css" />
+<!-- endbuild -->
+<style>
+  .container {
+    margin-top: 50px;
+    line-height: 1.6;
+  }
+  pre {
+    margin-top: 30px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+  }
+</style>
+<div class="container">
+  <script id="script">
+    document.write("<p>The Shield is an American drama television series " + 
+      "starring Michael Chiklis that premiered on March 12, 2002, on FX, " + 
+      "in the United States, and concluded on November 25, 2008, after seven" + 
+      " seasons. Known for its portrayal of corrupt police officers, it was " + 
+      "originally advertised as Rampart in reference to the true life Rampart " + 
+      "Division police scandal, on which the show's Strike Team was loosely " + 
+      "based. The series was created by Shawn Ryan and The Barn Productions " + 
+      "for Fox Television Studios and Sony Pictures Television.</p>");
+  </script>
+  <pre><script>
+    document.write(document.getElementById('script').innerHTML.replace(/&/g, '&amp;').replace(/</g, '&lt;'));
+  </script></pre>
+</div>
