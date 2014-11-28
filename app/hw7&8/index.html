@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<title>Course Unit 7 &amp; 8: Java Applets and Servlets</title>
+<!-- build:css(.tmp) /styles/main.css -->
+<link rel="stylesheet" href="/styles/main.css">
+<!-- endbuild -->
+<div class="container">
+  <h1>Course Unit 7 &amp; 8: Java Applets and Servlets</h1>
+  <ol>
+    <li>
+      <p>Research by loading these files on as many different browser types and versions as you can find (e.g. IE, Opera, Safari and Mozilla family). Snapshot what happens and include these images on your web site.</p>
+      <p><a href="http://net.pku.edu.cn/~zt/wst/webtech2014/units6and7UWE/applet1.html">applet1.html</a> on Safari
+      says "Unsurrpoted major.minor version 52.0".</p>
+      <p>This is because that the applet is compiled using Java 8 while Java in Safari
+      is only version 7.</p>
+      <img src="/images/hw7-1.png">
+      <p><a href="http://net.pku.edu.cn/~zt/wst/webtech2014/units6and7UWE/applet2.html">applet2.html</a> on Safari</p>
+      <img src="/images/hw7-2.png">
+      <p><a href="http://net.pku.edu.cn/~zt/wst/webtech2014/units6and7UWE/applet1.html">applet1.html</a> on Chrome</p>
+      <img src="/images/hw7-3.png">
+      <p><a href="http://net.pku.edu.cn/~zt/wst/webtech2014/units6and7UWE/applet2.html">applet2.html</a> on Chrome</p>
+      <img src="/images/hw7-4.png">
+    </li>
+    <li>
+      <p>Experiment with applet graphics (AWT and Swing). Create a simple applet to draw a red square and a green circle (hint: Use drawRect/fillRect and drawOval/fillOval methods).</p>
+      <p>AWT</p>
+      <object type="application/x-java-applet" width="300" height="100">
+        <param name="code" value="awt">
+        <param name="permissions" value="sandbox">
+      </object>
+      <p>Swing</p>
+      <object type="application/x-java-applet" width="300" height="100">
+        <param name="code" value="swing">
+        <param name="permissions" value="sandbox">
+      </object>
+    </li>
+    <li>
+      <p>Add to your applet to draw a third shape, determined by parameters passed from the HTML file that determine the shape and colour to draw. </p>
+      <p>
+        <a href="?0,0">[1]</a>
+        <a href="?1,0">[2]</a>
+        <a href="?0,1">[3]</a>
+        <a href="?1,1">[4]</a>
+      </p>
+      <div id="object"></div>
+      <script>
+        document.getElementById('object').innerHTML = '<object type="application/x-java-applet" width="300" height="100">' +
+            '<param name="code" value="awt2">' +
+            '<param name="permissions" value="sandbox">' +
+            '<param name="shape" value="' + (location.search.slice(1).split(",")[0] || "0") + '">' +
+            '<param name="color" value="' + (location.search.slice(1).split(",")[1] || "0") + '">' +
+          '</object>';
+      </script>
+    </li>
+    <li>
+      <p>Write a brief (&lt;200 words) essay outlining the differences between AWT and Swing graphics.</p>
+      <p>AWT stands for Abstract Window ToolKit. The Abstract Window Toolkit supports GUI Java programming. It is a portable GUI library for stand-alone applications and/or applets. The Abstract Window Toolkit provides the connection between your application and the native GUI. The AWT provides a high level of abstraction for your Java program since it hides you from the underlying details of the GUI your program will be running on. The AWT components depend on native code counterparts (called peers) to handle their functionality. Thus, these components are often called "heavyweight" components.</p>
+      <p>Swing implements a set of GUI components that build on AWT technology and provide a pluggable look and feel. Swing is implemented entirely in the Java programming language, and is based on the JDK 1.1 Lightweight UI Framework. Swing components do not depend on peers to handle their functionality. Thus, these components are often called "lightweight" components.</p>
+    </li>
+  </ol>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
