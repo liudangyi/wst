@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>View source</title>
+    <!-- build:css(.) /styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) /styles/main.css -->
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- endbuild -->
+    <style>
+      .container {
+        line-height: 1.6;
+      }
+      pre {
+        background-color: #EEE;
+        border: 1px solid #CCC;
+        border-radius: 6px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1></h1>
+      <pre></pre>
+    </div>
+
+    <!-- build:js(.) /scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) /scripts/main.js -->
+    <!-- endbuild --> 
+    <script type="text/javascript">
+      $("h1").text(location.search.slice(1));
+      $.get(location.search.slice(1), function(doc, stat, xhr){
+        console.log(xhr)
+        $("pre").text(xhr.responseText);
+      })
+    </script>
+  </body>
+</html>

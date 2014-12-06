@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="cookbook.xsl" ?>
+<cookbook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="cookbook.xsd">
+  <recipe>
+    <name>Rhubarb and Custard</name>
+    <ingredient>
+      <name>Milk</name>
+      <amount>15</amount>
+      <unit>ml</unit>
+    </ingredient>
+    <ingredient>
+      <name>Rhubarb</name>
+      <amount>700</amount>
+      <unit>g</unit>
+    </ingredient>
+    <ingredient>
+      <name>Custard Powder</name>
+      <amount>8</amount>
+      <unit>tbs</unit>
+    </ingredient>
+    <preparation>
+      <step>Mix together and put in oven proof dish</step>
+    </preparation>
+    <cooking>
+      <step>Heat in a moderate oven for 40 mins</step>
+    </cooking>
+  </recipe>
+  <recipe>
+    <name>Broiled Herb Butter Chicken</name>
+    <ingredient>
+      <name>Skinless, boneless chicken breast halves</name>
+      <amount>4</amount>
+      <unit></unit>
+    </ingredient>
+    <ingredient>
+      <name>Butter</name>
+      <amount>1/2</amount>
+      <unit>cup</unit>
+    </ingredient>
+    <ingredient>
+      <name>Garlic</name>
+      <amount>3</amount>
+      <unit>clove</unit>
+    </ingredient>
+    <ingredient>
+      <name>Dried parsley</name>
+      <amount>1</amount>
+      <unit>teaspoon</unit>
+    </ingredient>
+    <ingredient>
+      <name>Dried rosemary</name>
+      <amount>1/4</amount>
+      <unit>teaspoon</unit>
+    </ingredient>
+    <ingredient>
+      <name>Dried thyme</name>
+      <amount>1/4</amount>
+      <unit>teaspoon</unit>
+    </ingredient>
+    <preparation>
+      <step>Preheat oven to Broil/Grill and line broiler pan with aluminum foil.</step>
+    </preparation>
+    <cooking>
+      <step>Place chicken on pan. In a small bowl combine the butter, garlic, parsley, rosemary and thyme and mix together, then evenly spread a dollop of mixture on each chicken breast.</step>
+      <step>Broil in preheated oven, turning and frequently coating with remaining herb/butter mixture, for about 15 minutes or until chicken juices run clear.</step>
+    </cooking>
+  </recipe>
+</cookbook>
