@@ -10,7 +10,7 @@
 <div class="container">
 <%= yield %>
 </div>
-
+<%= ENV["SERVER"] %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
