@@ -1,0 +1,30 @@
+<h1>Questionnaires</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th width="100"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questionnaires.each do |questionnaire| %>
+      <tr>
+        <td><%= questionnaire.name %></td>
+        <td><%= questionnaire.age %></td>
+        <td><%= questionnaire.gender %></td>
+        <td><%= questionnaire.email %></td>
+        <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %> |
+        <%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Questionnaire', new_questionnaire_path %>

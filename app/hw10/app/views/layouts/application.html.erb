@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hw10</title>
+  <link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+<%= yield %>
+</div>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

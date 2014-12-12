@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @questionnaire.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @questionnaire.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @questionnaire.gender %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @questionnaire.email %>
+</p>
+
+<%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
+<%= link_to 'Back', questionnaires_path %>
